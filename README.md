@@ -1,4 +1,4 @@
-# _HairSalon Client Manager_
+﻿# _HairSalon Client Manager_
 
 #### _This web app will help salons manage their stylists and clients, 2018-12-07_
 
@@ -30,6 +30,8 @@ Required Software:
 		* CREATE TABLE stylists (id serial PRIMARY KEY, stylistname VARCHAR(255));
 		* CREATE TABLE clients (id serial PRIMARY KEY, clientName VARCHAR(255), stylist_id INT);
 
+		It should look like this when it's finished:
+
 4. Copy the database just created, as a duplicate test database
 	* Open phpMyAdmin, in the WebStart page it can be found in the top header bar under Tools > phpMyAdmin
 	* select from the menu on the left hand side 'charley_mcgowan'
@@ -42,8 +44,23 @@ Required Software:
 	* This should create a duplicate database by the name of "charley_mcgowan_test"
 	*if phpMyAdmin makes the DB's look like they are in two subfolders of 'charley' and 'mcgowan', don't worry about it, it's just a strange thing that happens, the databases should still work just fine.
 
+The databse structure should look like this when finished:
+
+charley
+└── mcgowan
+    ├── charley_mcgowan
+    │   ├── *new
+    │   ├── clients
+    │   └── stylists
+    └── charley_mcgowan_tests
+        ├── *new
+        ├── clients
+        └── stylists
+
+
 5. Run the program from the terminal in your cloned repository under that HairSalon folder
 	* Once in the HairSalon folder (not HairSalon.Solutions, but one further) type 'dotnet run' to get the terminal to run the web app.
+	* Once the webapp is running, navigate to the localhost website to get it. This could be localhost:5000 or some other port number other than 5000.
 
 
 ## Known Bugs
