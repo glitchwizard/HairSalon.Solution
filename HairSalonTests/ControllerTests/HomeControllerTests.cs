@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using HairSalon.Models;
 using HairSalon.Controllers;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 
 namespace HairSalon.Tests
 {

@@ -10,10 +10,10 @@ namespace HairSalon.Controllers
 {
     public class StylistsController : Controller
     {
-        // GET: /<controller>/
-        public IActionResult Index()
+        [HttpGet("/stylists")]
+        public ActionResult Index()
         {
-            return View();
+            return new EmptyResult();
         }
     }
 }
