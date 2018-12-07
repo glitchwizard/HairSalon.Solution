@@ -27,6 +27,19 @@ namespace HairSalon.Tests
 
             //Assert
             Assert.AreEqual(typeof(Stylist), testStylist.GetType());
+
+        }
+
+        [TestMethod]
+        public void Equals_ReturnsTrueIfNamesAreTheSame_True()
+        {
+            //Arrange, Act
+            Stylist firstStylist = new Stylist("Alex");
+            Stylist secondStylist = new Stylist("Alex");
+
+            //Assert
+            Assert.AreEqual(firstStylist, secondStylist);
+
         }
 
         [TestMethod]
