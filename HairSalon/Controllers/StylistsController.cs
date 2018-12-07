@@ -15,7 +15,7 @@ namespace HairSalon.Controllers
         {
             string dummyString = "";
             List<Stylist> allStylists = Stylist.GetAll();
-            return View(dummyString);
+            return View(allStylists);
         }
 
         [HttpGet("/stylists/new")]
