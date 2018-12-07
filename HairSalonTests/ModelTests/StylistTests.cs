@@ -7,12 +7,16 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace HairSalon.Tests
 {
     [TestClass]
-    public class StylistTests
+    public class StylistTests : IDisposable
     {
+        public void Dispose()
+        {
+            Stylist.ClearAll();
+        }
 
         public StylistTests()
         {
-            DBConfiguration.ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=charley_mcgowan_test;";
+            DBConfiguration.ConnectionString = "server=localhost;user id=root;password=root;port=3306;database=charley_mcgowan_test;";
         }
 
         [TestMethod]
@@ -30,10 +34,16 @@ namespace HairSalon.Tests
         {
             //Arrange
             Stylist testStylist = new Stylist("Sean");
+
             //Act
             testStylist.Save();
             List<Stylist> result = Stylist.GetAll();
-            List<Stylist> testList = new List<Stylist> {testStylist};
+            List<Stylist> testList = new List<Stylist>{testStylist};
+
+            Console.WriteLine("result[0].Name :" + result[0].Name);
+            Console.WriteLine("testList[0].Name :" + testList[0].Name);
+            Console.WriteLine("result.Count :" + result.Count);
+            Console.WriteLine("testList.Count :" + testList.Count);
 
             //Assert
             CollectionAssert.AreEqual(testList, result);

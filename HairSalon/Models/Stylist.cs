@@ -14,11 +14,26 @@ namespace HairSalon.Models
 
         public Stylist(string stylistName, int stylistId = 0)
         {
-            //this.Name = stylistName;
-            //this.id = stylistId;
+            this.Name = stylistName;
+            this.id = stylistId;
         }
 
-        public void ClearAll()
+        public override bool Equals(System.Object otherStylist)
+        {
+            if (!(otherStylist is Stylist))
+            {
+                return false;
+            }
+            else
+            {
+                Stylist newStylist = (Stylist) otherStylist;
+                bool idEquality = this.id.Equals(newStylist.id);
+                bool nameEquality = this.Name.Equals(newStylist.Name);
+                return (idEquality && nameEquality);
+            }
+        }
+
+        public static void ClearAll()
         {
             MySqlConnection conn = DB.Connection();
             conn.Open();
@@ -32,15 +47,46 @@ namespace HairSalon.Models
             }
         }
 
-        public void Save()
+        public void Save() // Create
         {
+            MySqlConnection conn = DB.Connection();
+            conn.Open();
+            MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+            cmd.CommandText = @"INSERT INTO stylists (stylistname) values (@stylistname);";
+            cmd.Parameters.AddWithValue("@stylistName", this.Name);
+            cmd.ExecuteNonQuery();
+            id = (int)cmd.LastInsertedId;
+            conn.Close();
+
+            if (conn != null)
+            {
+                conn.Dispose();
+            }
 
         }
 
         public static List<Stylist> GetAll()
         {
-            List<Stylist> dummyList = new List<Stylist> { };
-            return dummyList;
+            List<Stylist> allStylists = new List<Stylist> { };
+
+            MySqlConnection conn = DB.Connection();
+            conn.Open();
+            var cmd = conn.CreateCommand() as MySqlCommand;
+            cmd.CommandText = @"SELECT * FROM stylists;";
+            var rdr = cmd.ExecuteReader() as MySqlDataReader;
+            while (rdr.Read())
+            {
+                int stylistId = rdr.GetInt32(0);
+                string stylistName = rdr.GetString(1);
+                Stylist newStylist = new Stylist(stylistName, stylistId);
+                allStylists.Add(newStylist);
+            }
+            conn.Close();
+            if (conn != null)
+            {
+                conn.Dispose();
+            }
+            return allStylists;
         }
     }
 
