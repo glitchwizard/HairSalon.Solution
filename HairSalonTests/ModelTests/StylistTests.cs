@@ -123,6 +123,21 @@ namespace HairSalon.Tests
             Assert.AreEqual(testStylist, result);
         }
 
+        [TestMethod]
+        public void GetClients_ReturnsAList_True()
+        {
+            //Arrange
+            Stylist testStylist = new Stylist("Martha");
+            testStylist.Save();
+            List<Client> testClientList = testStylist.GetClients();
+
+            //Act
+            List<Client> result = new List<Client> { };
+
+            //Assert
+            CollectionAssert.AreEqual(testClientList, result);
+        }
+
         //Arrange
 
         //Act
