@@ -65,18 +65,10 @@ namespace HairSalon.Tests
         {
             //Arrange
             Client testClient = new Client("Becky", 1);
-            Console.WriteLine("-------------");
-            Console.WriteLine("testClient.Name: " + testClient.Name);
-            Console.WriteLine("testClient.id: " + testClient.id);
-            Console.WriteLine("testClient.stylist_id: " + testClient.stylist_id);
 
             //Act
             testClient.Save();
             Client savedClient = Client.GetAll()[0];
-            Console.WriteLine("-------------");
-            Console.WriteLine("savedClient.Name: " + savedClient.Name);
-            Console.WriteLine("savedClient.id: " + savedClient.id);
-            Console.WriteLine("savedClient.stylist_id: " + savedClient.stylist_id);
 
             int result = savedClient.id;
             int testId = testClient.id;
