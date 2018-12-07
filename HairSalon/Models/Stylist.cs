@@ -87,6 +87,10 @@ namespace HairSalon.Models
                 conn.Dispose();
             }
             return allStylists;
+
+            //List<Stylist> dummyList = new List<Stylist> { };
+            //return dummyList;
+
         }
     }
 
