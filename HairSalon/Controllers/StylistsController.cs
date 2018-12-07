@@ -13,14 +13,14 @@ namespace HairSalon.Controllers
         [HttpGet("/stylists")]
         public ActionResult Index()
         {
+            string dummyString = "";
             List<Stylist> allStylists = Stylist.GetAll();
-            return View(allStylists);
+            return View(dummyString);
         }
 
         [HttpGet("/stylists/new")]
         public ActionResult New()
         {
-
             return View();
         }
     }
