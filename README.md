@@ -50,21 +50,21 @@ The databse structure should look like this when finished:
 
 	└── mcgowan
 
-		├── charley_mcgowan
-
-			│   ├── *new
-
-			│   ├── clients
-
-			│   └── stylists
-
-			└── charley_mcgowan_tests
-
-				├── *new
-
-				├── clients
-
-				└── stylists
+		.	├── charley_mcgowan
+		.
+		.	│	.	├── *new
+		.
+		.	│	.	├── clients
+		.
+		.	│	.	└── stylists
+		.
+		.	└── charley_mcgowan_tests
+		.
+		.		.	├── *new
+		.
+		.		.	├── clients
+		.
+		.		.	└── stylists
 
 
 
