@@ -3,6 +3,7 @@ using HairSalon.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
+using System;
 
 namespace HairSalon.Tests
 {
@@ -15,10 +16,11 @@ namespace HairSalon.Tests
             Client.ClearAll();
         }
 
-        public StylistTests()
+        public StylistControllerTests()
         {
             DBConfiguration.ConnectionString = "server=localhost;user id=root;password=root;port=3306;database=charley_mcgowan_test;";
         }
+
         [TestMethod]
         public void Index_ReturnsAView_True()
         {

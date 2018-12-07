@@ -1,11 +1,13 @@
 using HairSalon.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using HairSalon.Models;
+using System;
 
 namespace HairSalon.Tests
 {
     [TestClass]
-    public class HomeControllerTests
+    public class HomeControllerTests : IDisposable
     {
         public void Dispose()
         {
@@ -13,10 +15,11 @@ namespace HairSalon.Tests
             Client.ClearAll();
         }
 
-        public StylistTests()
+        public HomeControllerTests()
         {
             DBConfiguration.ConnectionString = "server=localhost;user id=root;password=root;port=3306;database=charley_mcgowan_test;";
         }
+
         [TestMethod]
         public void Index_ReturnsAView_True()
         {
