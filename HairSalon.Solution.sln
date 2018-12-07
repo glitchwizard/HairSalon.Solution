@@ -3,9 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.106
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HairSalon", "HairSalon\HairSalon.csproj", "{66B9B89D-11C5-47BA-87E2-52898A0E9FE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HairSalon", "HairSalon\HairSalon.csproj", "{66B9B89D-11C5-47BA-87E2-52898A0E9FE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HairSalon.Tests", "HairSalonTests\HairSalon.Tests.csproj", "{840F1EB4-594C-48D0-9CFC-A75F7F4E65B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HairSalon.Tests", "HairSalonTests\HairSalon.Tests.csproj", "{840F1EB4-594C-48D0-9CFC-A75F7F4E65B9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6B41A347-A09A-4350-A093-7394343AA6E0}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

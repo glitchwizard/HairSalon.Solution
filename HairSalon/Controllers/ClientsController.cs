@@ -6,6 +6,16 @@ namespace HairSalon.Controllers
 {
     public class ClientsController : Controller
     {
+        public void Dispose()
+        {
+            Stylist.ClearAll();
+            Client.ClearAll();
+        }
+
+        public StylistTests()
+        {
+            DBConfiguration.ConnectionString = "server=localhost;user id=root;password=root;port=3306;database=charley_mcgowan_test;";
+        }
         // GET: /<controller>/
         public IActionResult Index()
         {
