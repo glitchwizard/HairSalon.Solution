@@ -1,13 +1,13 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+//using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace HairSalonTests
-{
-    [TestClass]
-    public class UnitTest1
-    {
-        [TestMethod]
-        public void TestMethod1()
-        {
-        }
-    }
-}
+//namespace HairSalonTests
+//{
+//    [TestClass]
+//    public class UnitTest1
+//    {
+//        [TestMethod]
+//        public void TestMethod1()
+//        {
+//        }
+//    }
+//}
