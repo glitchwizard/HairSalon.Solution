@@ -15,46 +15,39 @@ namespace HairSalon
         public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
-                .SetBasePath(env.ContentRootPath)
-                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
-                .AddEnvironmentVariables();
+              .SetBasePath(env.ContentRootPath)
+              .AddEnvironmentVariables();
             Configuration = builder.Build();
         }
 
         public IConfigurationRoot Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // Add framework services.
             services.AddMvc();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app)
         {
-            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
-            loggerFactory.AddDebug();
-
-            if (env.IsDevelopment())
-            {
-                app.UseBrowserLink();
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-            }
-
-            app.UseStaticFiles();
+            app.UseDeveloperExceptionPage();
 
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+            name: "default",
+            template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            app.Run(async (context) =>
+            {
+                await context.Response.WriteAsync("This page is showing up because you don't have something right!");
+            });
+
+
         }
+    }
+    public static class DBConfiguration
+    {
+        public static string ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=charley_mcgowan;";
     }
 }
