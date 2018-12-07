@@ -1,8 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
 
 namespace HairSalon.Models
 {
@@ -10,7 +7,6 @@ namespace HairSalon.Models
     {
         public string Name { get; set; }
         public int id { get; set; }
-
 
         public Stylist(string stylistName, int stylistId = 0)
         {
@@ -26,7 +22,7 @@ namespace HairSalon.Models
             }
             else
             {
-                Stylist newStylist = (Stylist) otherStylist;
+                Stylist newStylist = (Stylist)otherStylist;
                 bool idEquality = this.id.Equals(newStylist.id);
                 bool nameEquality = this.Name.Equals(newStylist.Name);
                 return (idEquality && nameEquality);
@@ -62,7 +58,6 @@ namespace HairSalon.Models
             {
                 conn.Dispose();
             }
-
         }
 
         public static List<Stylist> GetAll()
@@ -87,7 +82,6 @@ namespace HairSalon.Models
                 conn.Dispose();
             }
             return allStylists;
-
         }
 
         public static Stylist Find(int searchId)
@@ -115,5 +109,4 @@ namespace HairSalon.Models
             return newStylist;
         }
     }
-
 }

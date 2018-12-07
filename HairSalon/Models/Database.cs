@@ -1,7 +1,4 @@
-﻿
-using System;
-using HairSalon;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 
 namespace HairSalon.Models
 {

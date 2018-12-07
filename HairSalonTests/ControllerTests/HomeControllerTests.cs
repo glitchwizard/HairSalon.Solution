@@ -1,11 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-using HairSalon.Models;
 using HairSalon.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
 
 namespace HairSalon.Tests
 {
@@ -31,7 +26,4 @@ namespace HairSalon.Tests
 
         //Assert
     }
-
 }
-
-

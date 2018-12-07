@@ -1,10 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-using HairSalon.Models;
 using HairSalon.Controllers;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using HairSalon.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 
 namespace HairSalon.Tests
 {
@@ -35,7 +33,6 @@ namespace HairSalon.Tests
 
             //Assert
             Assert.IsInstanceOfType(result, typeof(List<Stylist>)); //apparently the test order is important here. If you have result listed 2nd it won't work.
-
         }
 
         [TestMethod]
@@ -54,7 +51,6 @@ namespace HairSalon.Tests
         [TestMethod]
         public void Create_ReturnsAView_True()
         {
-
             //Arrange
             string stylistName = "Benedict";
             StylistsController controller = new StylistsController();
@@ -64,7 +60,6 @@ namespace HairSalon.Tests
 
             //Assert
             Assert.IsInstanceOfType(createView, typeof(ViewResult));
-
         }
 
         [TestMethod]
@@ -78,10 +73,7 @@ namespace HairSalon.Tests
 
             //Assert
             Assert.IsInstanceOfType(createView, typeof(ViewResult));
-
         }
-
-
 
         //Arrange
 
@@ -89,7 +81,4 @@ namespace HairSalon.Tests
 
         //Assert
     }
-
 }
-
-

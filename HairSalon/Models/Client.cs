@@ -1,8 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
 
 namespace HairSalon.Models
 {
@@ -65,7 +62,6 @@ namespace HairSalon.Models
             {
                 conn.Dispose();
             }
-
         }
 
         public static List<Client> GetAll()
@@ -91,7 +87,6 @@ namespace HairSalon.Models
                 conn.Dispose();
             }
             return allClients;
-
         }
 
         public static Client Find(int searchId)

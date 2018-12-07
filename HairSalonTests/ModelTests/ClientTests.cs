@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using HairSalon.Models;
+﻿using HairSalon.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
 
 namespace HairSalon.Tests
 {
@@ -28,7 +27,6 @@ namespace HairSalon.Tests
 
             //Assert
             Assert.AreEqual(typeof(Client), testClient.GetType());
-
         }
 
         [TestMethod]
@@ -40,7 +38,6 @@ namespace HairSalon.Tests
 
             //Assert
             Assert.AreEqual(firstClient, secondClient);
-
         }
 
         [TestMethod]
@@ -52,7 +49,7 @@ namespace HairSalon.Tests
             //Act
             testClient.Save();
             List<Client> result = Client.GetAll();
-            List<Client> testList = new List<Client>{testClient};
+            List<Client> testList = new List<Client> { testClient };
 
             Console.WriteLine("result[0].Name :" + result[0].Name);
             Console.WriteLine("testList[0].Name :" + testList[0].Name);
@@ -61,7 +58,6 @@ namespace HairSalon.Tests
 
             //Assert
             CollectionAssert.AreEqual(testList, result);
-
         }
 
         [TestMethod]
@@ -117,7 +113,7 @@ namespace HairSalon.Tests
             //Act
             List<Client> resultList = Client.GetAll();
 
-            //Assert            
+            //Assert
             CollectionAssert.AreEqual(testList, resultList);
         }
 
@@ -142,4 +138,3 @@ namespace HairSalon.Tests
         //Assert
     }
 }
-

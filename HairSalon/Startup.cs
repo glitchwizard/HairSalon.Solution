@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -43,10 +38,9 @@ namespace HairSalon
             {
                 await context.Response.WriteAsync("This page is showing up because you don't have something right!");
             });
-
-
         }
     }
+
     public static class DBConfiguration
     {
         public static string ConnectionString = "server=localhost;user id=root;password=root;port=3306;database=charley_mcgowan;";
