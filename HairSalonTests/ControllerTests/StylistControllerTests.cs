@@ -35,6 +35,36 @@ namespace HairSalon.Tests
 
             //Assert
             Assert.IsInstanceOfType(result, typeof(List<Stylist>)); //apparently the test order is important here. If you have result listed 2nd it won't work.
+
+        }
+
+        [TestMethod]
+        public void New_ReturnsAView_True()
+        {
+            //Arrange
+            StylistsController controller = new StylistsController();
+
+            //Act
+            ActionResult newView = controller.New();
+
+            //Assert
+            Assert.IsInstanceOfType(newView, typeof(ViewResult));
+        }
+
+        [TestMethod]
+        public void Create_ReturnsAView_True()
+        {
+
+            //Arrange
+            string stylistName = "Benedict";
+            StylistsController controller = new StylistsController();
+
+            //Act
+            ActionResult createView = controller.Create(stylistName);
+
+            //Assert
+            Assert.IsInstanceOfType(createView, typeof(ViewResult));
+
         }
         //Arrange
 
