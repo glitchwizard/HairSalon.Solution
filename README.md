@@ -44,7 +44,7 @@ Required Software:
 	* This should create a duplicate database by the name of "charley_mcgowan_test"
 	*if phpMyAdmin makes the DB's look like they are in two subfolders of 'charley' and 'mcgowan', don't worry about it, it's just a strange thing that happens, the databases should still work just fine.
 
-The databse structure should look like this when finished:
+The databse structure should look like this when finished (ignore the . marks, they're there to make the formatting work):
 
 	charley
 
@@ -71,6 +71,17 @@ The databse structure should look like this when finished:
 5. Run the program from the terminal in your cloned repository under that HairSalon folder
 	* Once in the HairSalon folder (not HairSalon.Solutions, but one further) type 'dotnet run' to get the terminal to run the web app.
 	* Once the webapp is running, navigate to the localhost website to get it. This could be localhost:5000 or some other port number other than 5000.
+
+The site layout was created using RESTful routing, as follows: 
+
+| Route Name  | URL Path | HTTP Method | Purpose |
+| ------------- | ------------- | ------------- | ------------- |
+| Index  | /  | GET  | Opening Splash Page  |
+| Index  | /stylists | GET  | Show list of all stylists, w/ links to create more  |
+| New  | /stylists/new  | GET  | Offers form to create new Stylist |
+| Create  | /stylists  | POST  | Creates a new Stylist  |
+| Show  | /stylists/:id  | GET  | Displays a single stylists list of clients  |
+| TBD  | TBD  | TBD  | TBD  |
 
 
 ## Known Bugs
