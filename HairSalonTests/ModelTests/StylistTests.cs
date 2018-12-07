@@ -7,14 +7,15 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace HairSalon.Tests
 {
     [TestClass]
-    public class StylistsTests : IDisposable
+    public class StylistTests : IDisposable
     {
         public void Dispose()
         {
             Stylist.ClearAll();
+            Client.ClearAll();
         }
 
-        public StylistsTests()
+        public StylistTests()
         {
             DBConfiguration.ConnectionString = "server=localhost;user id=root;password=root;port=3306;database=charley_mcgowan_test;";
         }
