@@ -48,22 +48,14 @@ The databse structure should look like this when finished:
 
 charley
 └── mcgowan
-
-    ├── charley_mcgowan
-
-    │   ├── *new
-
-    │   ├── clients
-
-    │   └── stylists
-
-    └── charley_mcgowan_tests
-
+├── charley_mcgowan
+	│   ├── *new
+	│   ├── clients
+	│   └── stylists
+	└── charley_mcgowan_tests
         ├── *new
-
-        ├── clients
-
-        └── stylists
+		├── clients
+		└── stylists
 
 
 
