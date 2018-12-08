@@ -11,13 +11,13 @@ _This app will allow the input of stylists working at a salon, and allow those s
 
 The customer is a salon employee.
 
-Customer Story:
+#### Customer Story:
 * As a salon employee, there is a need to be able to see a list of all stylists.
 * As an employee, there is a need to be able to select a stylist, see their details, and see a list of all the clients that belong to that stylist.
 * As an employee, there is a need to add new stylists to the system when they are hired.
 * As an employee, there is a need to be able to add new clients to a specific stylist. Employees should not be able to add a client if no stylists have been added.
 
-Technical Specs:
+#### Technical Specs:
 1. Need CRUD w/ MySQL Database implemented for stylist information
 2. Need CRUD w/ MySQL Database implemented for clients of those stylists.
 3. Clients should be linked to Stylists in a one-to-many fashion, with many clients linking to only a single stylist
@@ -33,9 +33,8 @@ Technical Specs:
 	* Add a feature for adding an appointment to a stylist. Add a check to make sure the stylist does not have any conflicting appointments.
 	* Add a feature for keeping track of how much each stylist was paid for each appointment.
 	* Add styling to your page.
-5. ... 
 
-------------------------------------------------------------------------------------------------------------------------------------
+#### Detailed Specs ----------
 
 | Specification                                                                                    	| Input                                               	| Expected Output                                                      	|
 |--------------------------------------------------------------------------------------------------	|-----------------------------------------------------	|----------------------------------------------------------------------	|
