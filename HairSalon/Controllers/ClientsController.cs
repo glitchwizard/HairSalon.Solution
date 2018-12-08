@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using HairSalon.Models;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -14,33 +15,38 @@ namespace HairSalon.Controllers
         [HttpGet("/stylists/{stylistId}/clients")]
         public ActionResult Index()
         {
-            List<Stylist> allStylists = Stylist.GetAll();
-            return View(allStylists);
+            List<Client> allClients = Client.GetAll();
+            return View(allClients);
         }
 
         [HttpGet("/stylists/{stylistId}/clients/new")]
-        public ActionResult New()
+        public ActionResult New(int stylistId)
         {
-            return View();
+            Stylist selectedStylist = Stylist.Find(stylistId);
+            return View(selectedStylist);
         }
 
-        [HttpPost("/stylists/{stylistId}/clients")]
-        public ActionResult Create(string stylistName)
+        [HttpPost("/stylists/{stylistId}")]
+        public RedirectToActionResult Create(int stylistId, string clientName)
         {
-            Stylist newStylist = new Stylist(stylistName);
-            newStylist.Save();
-            List<Stylist> allStylists = Stylist.GetAll();
-            return View("Index", allStylists);
+            Dictionary<string, object> model = new Dictionary<string, object>();
+            Stylist selectedStylist = Stylist.Find(stylistId);
+            Client newClient = new Client(clientName, stylistId);
+            newClient.Save();
+            model.Add("stylist", selectedStylist);
+            model.Add("clients", selectedStylist.GetClients());
+            List<Client> allClients = Client.GetAll();
+            return RedirectToAction("Show", model);
         }
 
         [HttpGet("/stylists/{stylistId}/clients/{clientId}")]
-        public ActionResult Show(int id)
+        public ActionResult Show(int stylistId, int clientId)
         {
             Dictionary<string, object> model = new Dictionary<string, object>();
-            Stylist selectedStylist = Stylist.Find(id);
-            List<Client> clientList = selectedStylist.GetClients();
+            Stylist selectedStylist = Stylist.Find(stylistId);
+            Client selectedClient = Client.Find(clientId);
             model.Add("stylist", selectedStylist);
-            model.Add("clients", clientList);
+            model.Add("client", selectedClient);
             return View(model);
         }
     }

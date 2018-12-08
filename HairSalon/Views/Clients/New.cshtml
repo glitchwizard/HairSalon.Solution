@@ -3,3 +3,12 @@
 *@
 @{
 }
+
+<h1>Add a new client to @Model.Name's clientel list</h1>
+
+<form action='/stylists/@Model.id/' method='post'>
+    <input id='stylistId' name='stylistId' type='hidden' value='@Model.id'>
+    <label for='clientName'>Client name:</label>
+    <input id='clientName' name='clientName' type='text'>
+    <button type='submit'>Add client</button>
+</form>

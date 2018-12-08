@@ -51,11 +51,6 @@ namespace HairSalon.Tests
             List<Client> result = Client.GetAll();
             List<Client> testList = new List<Client> { testClient };
 
-            Console.WriteLine("result[0].Name :" + result[0].Name);
-            Console.WriteLine("testList[0].Name :" + testList[0].Name);
-            Console.WriteLine("result.Count :" + result.Count);
-            Console.WriteLine("testList.Count :" + testList.Count);
-
             //Assert
             CollectionAssert.AreEqual(testList, result);
         }

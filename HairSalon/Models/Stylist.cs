@@ -132,5 +132,6 @@ namespace HairSalon.Models
             }
             return allStylistClients;
         }
+       
     }
 }

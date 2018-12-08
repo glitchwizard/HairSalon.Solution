@@ -1,0 +1,24 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h2>@Model["stylist"].Name's profile</h2>
+
+
+@if (@Model["clients"].Count == 0)
+{
+    <h3>No clients have been added yet!</h3>
+}
+
+<ol>
+    @foreach (var client in @Model["clients"])
+    {
+        <li><a href='/stylists/@Model["stylist"].id/clients/@client.id'>@client.Name</a></li>
+    }
+</ol>
+
+<p><a href='/stylists/@Model["stylist"].id/clients/new'>Add a new client</a></p>
+<p><a href='/stylists'>Return to stylist list</a></p>
+<p><a href='/'>Return to Main Page</a></p>
