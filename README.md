@@ -74,18 +74,26 @@ The databse structure should look like this when finished (ignore the . marks, t
 
 The site layout was created using RESTful routing, as follows: 
 
-| Route Name  | URL Path | HTTP Method | Purpose |
-| ------------- | ------------- | ------------- | ------------- |
-| Index  | /  | GET  | Opening Splash Page  |
-| Index  | /stylists | GET  | Show list of all stylists, w/ links to create more  |
-| New  | /stylists/new  | GET  | Offers form to create new Stylist |
-| Create  | /stylists  | POST  | Creates a new Stylist  |
-| Show  | /stylists/:id  | GET  | Displays a single stylists list of clients  |
-| TBD  | TBD  | TBD  | TBD  |
+| Route Name | URL Path                                       | HTTP Method                    | Purpose																   |
+|------------|------------------------------------------------|--------------------------------|---------------------------------------------------------------------------|
+| Index      | /stylists                                      | GET                            | Display list of all stylistss											   |
+| New        | /stylists/new                                  | GET                            | Offers form to create new stylists										   |
+| Create     | /stylists                                      | POST                           | Creates new stylists on server											   |
+| Show       | /stylists/:id                                  | GET                            | Displays one specific stylistsIs details								   |
+| Edit       | /stylists/:id/edit                             | GET                            | Offers form to edit specific stylists									   |
+| Update     | /stylists/:id                                  | PATCH  (via POST with MVC)	   | Updates specific stylists on server									   |
+| Destroy    | /stylists/:id                                  | DELETE (via POST with MVC)     | Deletes specific stylists on server (not complete)						   |
+| Index      | /clients                                       | GET                            | Displays all clients regardless of associations with   stylistss		   |
+| New        | /stylists/:stylists_id/client/new              | GET                            | Offers form to create new client within specific stylists			       |
+| Create     | /stylists/:stylists_id/client                  | POST                           | Creates new client within specific stylists on server				       |
+| Show       | /stylists/:stylists_id/client/:client_id       | GET                            | Displays details for a specific client associated with a   stylists	   |
+| Edit       | /stylists/:stylists_id/client/:client_id/edit  | GET                            | Offers form to edit specific client associated with stylists		       |
+| Update     | /stylists/:stylists_id/client/:client_id       | PATCH  (via POST with MVC)     | Updates specific client associated with stylists on server				   |
+| Destroy    | /stylists/:stylists_id/client/:client_id       | DELETE  (via POST with MVC)    | Deletes specific client associated with stylists on server (not complete) |
 
 
 ## Known Bugs
-_No known bugs at this time_
+_No known bugs at this time, but tables can't be delted at the moment_
 
 ## Support and contact details
 _Charley McGowan_
