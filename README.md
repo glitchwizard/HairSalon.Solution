@@ -21,18 +21,19 @@ The customer is a salon employee.
 1. Need CRUD w/ MySQL Database implemented for stylist information
 2. Need CRUD w/ MySQL Database implemented for clients of those stylists.
 3. Clients should be linked to Stylists in a one-to-many fashion, with many clients linking to only a single stylist
-	* This can be updated in later development to be many-to-many, so customers may be linked to multiple stylists
+	- This can be updated in later development to be many-to-many, so customers may be linked to multiple stylists
 4. Optional further exploration upgrades:
-	* Build out UPDATE and DELETE (individual and all) functionality for stylists.
-	* Build out UPDATE and DELETE (individual and all) functionality for clients.
-	* Include a form where employees may search for a stylist by name. Use a SQL query to perform the database search, then display a list of all results.
-	* Include a form where employees may also search for a client by name. Use an SQL query to perform the database search, then display a list of all results.
-	* Add a <select> drop down field that allows a user to select which Stylist a Client belongs to.
-	* Add a detail view page for each Client. Include additional properties to record additional notes and details the salon may want to record about each Client.
-	* Add a feature for adding an appointment to a client.
-	* Add a feature for adding an appointment to a stylist. Add a check to make sure the stylist does not have any conflicting appointments.
-	* Add a feature for keeping track of how much each stylist was paid for each appointment.
-	* Add styling to your page.
+	- Build out UPDATE and DELETE (individual and all) functionality for stylists.
+	- Build out UPDATE and DELETE (individual and all) functionality for clients.
+	- Include a form where employees may search for a stylist by name. Use a SQL query to perform the database search, then display a list of all results.
+	- Include a form where employees may also search for a client by name. Use an SQL query to perform the database search, then display a list of all results.
+	- Add a <select> drop down field that allows a user to select which Stylist a Client belongs to.
+	- Add a detail view page for each Client. Include additional properties to record additional notes and details the salon may want to record about each Client.
+	- Add a feature for adding an appointment to a client.
+	- Add a feature for adding an appointment to a stylist. Add a check to make sure the stylist does not have any conflicting appointments.
+	- Add a feature for keeping track of how much each stylist was paid for each appointment.
+	- Add styling to your page.
+
 
 #### Detailed Specs ----------
 
