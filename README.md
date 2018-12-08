@@ -34,6 +34,8 @@ Technical Specs:
 	* Add a feature for keeping track of how much each stylist was paid for each appointment.
 	* Add styling to your page.
 
+
+
 | Specification                                                                                    	| Input                                               	| Expected Output                                                      	|
 |--------------------------------------------------------------------------------------------------	|-----------------------------------------------------	|----------------------------------------------------------------------	|
 | Stylist Constructor creates instance of Stylist object                                           	| String "Stylists Name"                              	| Stylist Object instantiated                                          	|
