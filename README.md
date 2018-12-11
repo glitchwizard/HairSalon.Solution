@@ -112,25 +112,18 @@ Required Software:
 
 The databse structure should look like this when finished (ignore the . marks, they're there to make the formatting work):
 
-	charley
 
-	└── mcgowan
 
-		.	├── charley_mcgowan
-		.
-		.	│	.	├── *new
-		.
-		.	│	.	├── clients
-		.
-		.	│	.	└── stylists
-		.
-		.	└── charley_mcgowan_tests
-		.
-		.		.	├── *new
-		.
-		.		.	├── clients
-		.
-		.		.	└── stylists
+	└──charley 
+		└── mcgowan
+			├── charley_mcgowan
+			│	├── *new
+			│	├── clients
+			│	└── stylists
+			└── charley_mcgowan_tests
+				├── *new
+				├── clients
+				└── stylists
 
 
 
