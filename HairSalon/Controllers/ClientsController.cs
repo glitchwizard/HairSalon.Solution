@@ -33,10 +33,7 @@ namespace HairSalon.Controllers
             Stylist selectedStylist = Stylist.Find(stylistId);
             Client newClient = new Client(clientName, stylistId);
             newClient.Save();
-            model.Add("stylist", selectedStylist);
-            model.Add("clients", selectedStylist.GetClients());
-            List<Client> allClients = Client.GetAll();
-            return RedirectToAction("Show", model);
+            return RedirectToAction("Show", "Stylists");
         }
 
         [HttpGet("/stylists/{stylistId}/clients/{clientId}")]
